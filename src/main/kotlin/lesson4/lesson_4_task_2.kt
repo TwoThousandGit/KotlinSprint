@@ -1,11 +1,16 @@
 package lesson4
 
-fun main() {
-    val minWeight = 35
-    val maxWeight = 100
-    val maxVolume = 99
+const val MIN_WEIGHT = 35
+const val MAX_WEIGHT = 100
+const val MAX_VOLUME = 99
 
-    println("Average для груза с весом 20 кг:${20 <= maxWeight && 20 >= minWeight}")
-    println("Average для груза с весом 50 кг и объемом 80 л:${50 <= maxWeight && 50 >= minWeight && 80 <= maxVolume}")
-    println("Average для груза с объемом 100л:${100 < maxVolume}")
+fun main() {
+    val firstWeight = 20
+    val secondWeight = 50
+    val secondVolume = 80
+    val thirdVolume = 100
+
+    println("Average для груза с весом $firstWeight кг:${firstWeight in MIN_WEIGHT..MAX_WEIGHT}")
+    println("Average для груза с весом $secondWeight кг и объемом $secondVolume л:${secondWeight in MIN_WEIGHT..MAX_WEIGHT && secondVolume <= MAX_VOLUME}")
+    println("Average для груза с объемом $thirdVolume:${thirdVolume < MAX_VOLUME}")
 }
