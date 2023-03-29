@@ -18,8 +18,9 @@ fun main() {
         || ((secondUserNum == secondSecretNum) || (secondUserNum == firstSecretNum))
     )
         "Вы выиграли утешительный приз!"
-    else
-        "Неудача! Крутите барабан!"
+    else {
+        "Неудача! Крутите барабан!\nЧисла были $firstSecretNum и $secondSecretNum"
+    }
 
     println(resultText)
 }
