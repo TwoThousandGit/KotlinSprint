@@ -1,0 +1,25 @@
+package lesson5
+
+fun main() {
+    val firstSecretNum = (1..100).random()
+    val secondSecretNum = (1..10).random()
+
+    println("\"Лотерейка\" - угадайте 2 числа от 1 до 100 и выиграйте главный приз - 1000$ ")
+    print("Попробуйте угадать первое число: ")
+    val firstUserNum = readln().toInt()
+    print("Хорошо!\nТеперь попробуйте угадать второе число: ")
+    val secondUserNum = readln().toInt()
+
+    val resultText = if (((firstUserNum == firstSecretNum) || (firstUserNum == secondSecretNum))
+        && ((secondUserNum == secondSecretNum) || (secondUserNum == firstSecretNum))
+    )
+        "Поздравляем! Вы выиграли главный приз!"
+    else if (((firstUserNum == firstSecretNum) || (firstUserNum == secondSecretNum))
+        || ((secondUserNum == secondSecretNum) || (secondUserNum == firstSecretNum))
+    )
+        "Вы выиграли утешительный приз!"
+    else
+        "Неудача! Крутите барабан!\nЧисла были $firstSecretNum и $secondSecretNum"
+
+    println(resultText)
+}
